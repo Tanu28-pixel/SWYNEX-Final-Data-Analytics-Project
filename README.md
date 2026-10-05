@@ -1,2 +1,451 @@
 # SWYNEX-Final-Data-Analytics-Project
+1. Problem Statement
 
+Banks conduct marketing campaigns to encourage customers to subscribe to financial products such as term deposits.
+
+However, not every customer responds positively to these campaigns.
+
+The objective of this project is to analyze the Bank Marketing dataset and identify:
+
+Overall campaign performance
+Customer subscription behavior
+Job categories with higher subscription rates
+Monthly differences in subscription rates
+Performance across different contact types
+Relationship between education and subscription
+Relationship between customer balance ranges and subscription
+Differences between customers who subscribed and those who did not
+Factors that can help improve future marketing campaigns
+
+The analysis is presented through an interactive Power BI dashboard to make the results easier to understand and use for decision-making.
+
+2. Dataset Information
+
+The project uses the Bank Marketing dataset.
+
+The dataset contains customer-related and marketing-campaign-related information.
+
+Target Variable
+
+y – Term Deposit Subscription
+
+yes → Customer subscribed to the term deposit
+no → Customer did not subscribe
+Important Dataset Variables
+Category	Variables
+Customer Information	Age, Job, Marital Status, Education
+Financial Information	Balance, Housing Loan, Personal Loan
+Campaign Information	Contact Type, Month, Campaign
+Call Information	Call Duration
+Previous Campaign	Previous Contacts, Previous Campaign Outcome
+Target	Term Deposit Subscription
+Dataset Used
+
+Cleaned Dataset: bank_marketing_cleaned.csv
+
+3. Data Cleaning Process
+
+Before performing analysis, the raw Bank Marketing dataset was cleaned and prepared for analysis.
+
+The main cleaning activities included:
+
+3.1 Data Loading
+
+The dataset was loaded into Python using Pandas.
+
+3.2 Dataset Inspection
+
+The dataset was inspected to understand:
+
+Number of rows and columns
+Column names
+Data types
+Missing values
+Numerical and categorical variables
+3.3 Missing Value Checking
+
+Missing values were checked across all columns to ensure that incomplete data would not negatively affect the analysis.
+
+3.4 Data Type Checking
+
+Columns were reviewed and converted into appropriate formats where required so that numerical calculations and categorical analysis could be performed correctly.
+
+3.5 Duplicate/Data Quality Checking
+
+The dataset was reviewed for data-quality issues and unnecessary duplicate records.
+
+3.6 Categorical Data Preparation
+
+Categorical variables such as:
+
+Job
+Education
+Contact Type
+Month
+Housing
+Loan
+Previous Campaign Outcome
+Subscription Outcome
+
+were prepared for analysis.
+
+3.7 Numerical Data Preparation
+
+Numerical variables such as:
+
+Age
+Balance
+Duration
+Campaign
+Pdays
+Previous Contacts
+
+were examined for unusual values and potential outliers.
+
+3.8 Clean Dataset
+
+After the cleaning process, the prepared dataset was used for EDA and Power BI dashboard development.
+
+4. Exploratory Data Analysis
+
+Exploratory Data Analysis was performed using:
+
+Python
+Pandas
+Matplotlib
+Jupyter Notebook
+
+The EDA focused on understanding customer subscription behavior and campaign performance.
+
+4.1 Overall Subscription Analysis
+
+The target variable y was analyzed to understand the overall campaign outcome.
+
+Finding
+11.52% of customers subscribed to the term deposit.
+88.48% did not subscribe.
+
+This shows a strong imbalance between successful and unsuccessful campaign outcomes.
+
+5. Job Analysis
+
+Subscription rates were calculated for different job categories.
+
+The analysis showed that subscription rates varied significantly across occupations.
+
+Key Finding
+Retired and student customers showed relatively high subscription rates.
+Blue-collar customers showed a comparatively lower subscription rate.
+
+This indicates that occupation can be an important factor when identifying customer segments for future campaigns.
+
+6. Month Analysis
+
+Subscription rates were analyzed across different contact months.
+
+Key Finding
+
+Subscription rates varied considerably across months.
+
+Some months showed higher subscription rates than others.
+
+However, months with relatively few observations should be interpreted carefully because a small sample size can make the rate less reliable.
+
+7. Previous Campaign Analysis
+
+The relationship between the previous campaign outcome and the current subscription was analyzed.
+
+Key Finding
+
+Customers with a successful previous campaign outcome showed a substantially higher subscription rate compared with customers whose previous campaign outcome was unsuccessful or another outcome.
+
+This suggests that previous campaign engagement can be useful when prioritizing customers for future campaigns.
+
+8. Loan Analysis
+
+The dataset was analyzed based on:
+
+Housing loan
+Personal loan
+Key Finding
+
+Customers without a housing loan showed a higher subscription rate than customers with a housing loan.
+
+Loan status can therefore be considered as one of the customer characteristics when planning targeted campaigns.
+
+9. Call Duration Analysis
+
+Call duration was compared between customers who subscribed and those who did not.
+
+Mean, median, minimum and maximum duration were examined.
+
+A box plot was also used to visualize the distribution.
+
+Key Finding
+
+Customers who subscribed generally had longer call durations than customers who did not subscribe.
+
+This indicates that more engaged conversations were associated with higher subscription rates in the dataset.
+
+Important: longer calls should not automatically be interpreted as the cause of subscription; the analysis shows an association.
+
+10. Outlier Analysis
+
+Potential outliers were investigated using the Interquartile Range (IQR) method.
+
+The following numerical variables were examined:
+
+Age
+Balance
+Duration
+Campaign
+Pdays
+Previous Contacts
+Key Finding
+
+The balance variable contained extreme values compared with the middle 50% of observations.
+
+Potential outliers were therefore identified for investigation rather than automatically removed, because extreme financial values may represent genuine customers.
+
+11. Power BI Dashboard
+
+After completing the data cleaning and EDA stages, an interactive dashboard was created using Microsoft Power BI.
+
+Dashboard Title
+
+BANK MARKETING CAMPAIGN
+Performance Dashboard
+
+The dashboard was designed to provide a quick overview of campaign performance and allow users to explore subscription behavior interactively.
+
+12. Dashboard KPIs
+
+The dashboard contains four major KPI cards:
+
+1. Total Contacts
+
+Shows the total number of customer records/contacts included in the campaign analysis.
+
+2. Average Duration
+
+Shows the average duration of customer calls.
+
+3. Subscription Rate
+
+Shows the percentage of customers who subscribed to the term deposit.
+
+The overall subscription rate is approximately 11.52%.
+
+4. Total Subscriptions
+
+Shows the total number of successful term-deposit subscriptions.
+
+13. Dashboard Visualizations
+
+The Power BI dashboard contains the following visualizations.
+
+13.1 Subscription Outcome
+
+A donut chart showing the proportion of:
+
+Customers who subscribed
+Customers who did not subscribe
+
+This provides an immediate view of overall campaign success.
+
+13.2 Subscription Rate by Job
+
+A horizontal bar chart compares subscription rates across job categories.
+
+This helps identify customer occupations with relatively higher or lower subscription rates.
+
+13.3 Subscription Rate by Month
+
+A line chart displays subscription-rate changes across months.
+
+This helps identify periods where campaign performance was relatively stronger or weaker.
+
+13.4 Subscription Rate by Contact Type
+
+A column chart compares subscription rates across different contact methods.
+
+This helps evaluate whether certain communication channels were associated with better campaign outcomes.
+
+13.5 Subscription Rate by Education
+
+A horizontal bar chart compares subscription rates across education categories.
+
+This helps identify differences in subscription behavior across education groups.
+
+13.6 Subscription Rate by Balance Range
+
+A column chart groups customers into balance ranges and compares their subscription rates.
+
+The dashboard uses the following balance groups:
+
+Negative
+0–999
+1,000–4,999
+5,000–9,999
+10,000+
+14. Interactive Filters
+
+The dashboard includes interactive slicers for:
+
+Month
+Job
+Education
+Contact Type
+
+These filters allow users to select specific customer groups and dynamically explore the campaign results.
+
+15. Dashboard Design
+
+The dashboard follows a clean and professional visual design.
+
+Color Palette
+Soft lavender/gray background
+Cream visual cards
+Dark navy/purple headings
+Muted purple/gray charts
+Green highlights for successful subscriptions
+
+The design was created to maintain consistency across KPI cards, charts and filters while keeping the dashboard easy to read.
+
+16. Key Business Insights
+
+Based on the EDA and Power BI dashboard, the following insights were identified.
+
+Insight 1 – Low Overall Conversion
+
+Only 11.52% of customers subscribed to the term deposit, while 88.48% did not.
+
+This indicates that the campaign has significant room for improvement.
+
+Insight 2 – Customer Occupation Matters
+
+Subscription rates differed across job categories.
+
+Retired and student customers showed relatively high subscription rates, while blue-collar customers showed a lower rate.
+
+Business Implication
+
+Future campaigns could use occupation-based segmentation instead of treating all customers equally.
+
+Insight 3 – Previous Campaign Success Is Important
+
+Customers who had a successful previous campaign outcome showed a substantially higher subscription rate.
+
+Business Implication
+
+Customers with positive previous campaign interactions could be prioritized for future campaigns.
+
+Insight 4 – Longer Conversations Show Higher Subscription Association
+
+Customers who subscribed generally had longer call durations.
+
+Business Implication
+
+Sales representatives could focus on understanding customer needs and maintaining meaningful conversations rather than simply increasing the number of calls.
+
+Insight 5 – Campaign Performance Changes by Month
+
+Subscription rates differed across months.
+
+Business Implication
+
+The bank can analyze high-performing campaign periods and consider optimizing campaign timing.
+
+Insight 6 – Loan Status Shows Differences
+
+Customers without a housing loan showed a higher subscription rate than customers with a housing loan.
+
+Business Implication
+
+Loan-related customer characteristics can be included in customer segmentation strategies.
+
+Insight 7 – Balance Segmentation Can Support Targeting
+
+Subscription rates varied across balance ranges.
+
+Business Implication
+
+Customer financial characteristics can be combined with other variables to develop more targeted marketing segments.
+
+17. Business Recommendations
+
+Based on the analysis, the following recommendations can be considered:
+
+1. Improve Customer Segmentation
+
+Use customer characteristics such as occupation, education, loan status and balance to create more focused campaign segments.
+
+2. Prioritize Previously Engaged Customers
+
+Customers with positive previous campaign outcomes can be prioritized because they demonstrated stronger subscription behavior.
+
+3. Focus on Meaningful Customer Conversations
+
+Since longer call durations were associated with subscription, campaign teams can focus on better customer engagement and understanding customer requirements.
+
+4. Optimize Campaign Timing
+
+Analyze monthly campaign performance and allocate greater effort toward periods associated with stronger subscription rates.
+
+5. Use Data-Driven Targeting
+
+Instead of contacting every customer in the same way, use historical campaign behavior and customer characteristics to identify higher-potential customers.
+
+6. Continuously Monitor Campaign Performance
+
+The Power BI dashboard can be used to monitor campaign KPIs and compare different customer segments over time.
+
+18. Tools & Technologies Used
+Tool	Purpose
+Python	Data analysis and preparation
+Pandas	Data cleaning and analysis
+Matplotlib	EDA visualizations
+Jupyter Notebook	Data analysis environment
+Power BI	Interactive dashboard
+DAX	KPI and calculated measures
+GitHub	Project documentation and sharing
+19. Project Workflow
+Raw Bank Marketing Dataset
+          ↓
+     Data Cleaning
+          ↓
+   Cleaned Dataset
+          ↓
+Exploratory Data Analysis
+          ↓
+  Pattern Identification
+          ↓
+   Business Insights
+          ↓
+   Power BI Dashboard
+          ↓
+ Business Recommendations
+20. Project Deliverables
+
+The final project contains:
+
+Raw dataset
+Cleaned dataset
+Data cleaning notebook
+EDA notebook
+Power BI dashboard
+Project documentation
+
+21. Conclusion
+
+This project provided an end-to-end data analytics workflow using the Bank Marketing dataset.
+
+The analysis showed that the overall subscription rate was relatively low, with only 11.52% of customers subscribing.
+
+Important differences were identified across job categories, contact months, previous campaign outcomes, loan status, contact types, education and balance ranges. Call duration also showed a noticeable association with subscription outcomes.
+
+The final Power BI dashboard converts these findings into an interactive business intelligence solution, allowing users to monitor KPIs, compare customer segments and explore campaign performance through filters.
+
+Overall, the project demonstrates how data cleaning, exploratory analysis, visualization and business intelligence can work together to support data-driven marketing decisions
+Key business insights
+Business recommendations
